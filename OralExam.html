@@ -1477,8 +1477,8 @@ d_E(i,j) =
 \end{cases}
 \]</span></p></li>
 </ul>
-<p>We can define binary exposure variable <span class="math inline">\(\delta_{11}(\textbf{E}_{i,j})= \{(E_i = 1,E_j =
-1)\}\)</span>. <br><br></p>
+<p>We can define binary exposure variable <span class="math inline">\(\delta_{11}(\textbf{E}_{i,j})= \{\textbf{1}(E_i =
+1,E_j = 1)\}\)</span>. <br><br></p>
 <ul>
 <li><p><strong>Mediator (Microbiome, <span class="math inline">\(\mathbf{M}_i\)</span>):</strong><br />
 The mediator consists of microbiome measurements (e.g., relative
@@ -1590,6 +1590,8 @@ Y_{i,j}^{00, M_{i,j}^{00}}\right] = \xi^{11} - \xi^{00},\\[1mm]
 - E\left[Y_{i,j}^{00, M_{i,j}^{00}}\right] = \rho - \xi^{00}.
 \end{aligned}
 \]</span></p>
+<div id="estimating-rho" class="section level4">
+<h4>Estimating <span class="math inline">\(\rho\)</span></h4>
 <p>To estimate these effects, we develop a joint estimation procedure
 that employs a combination of working models and a U-statistics based
 generalized estimating equation (UGEE) approach. Estimating functions
@@ -1600,7 +1602,7 @@ derivation of the Efficient Influence Function (EIF) for our target
 parameter: the counterfactual mean. This allows our estimator to be
 triply robust, meaning it remains consistent even if the model for one
 (but not more than one) nuisance function is misspecified <span class="citation">(Xu et al. 2024)</span>.</p>
-<p>In this procedure, we define a series of working functions <span class="citation">(<strong>Tchetgen2012?</strong>)</span>: <span class="math display">\[
+<p>In this procedure, we define a series of working functions <span class="citation">(Tchetgen and Shpitser 2012)</span>: <span class="math display">\[
 \begin{aligned}
 f_{i1} &amp;= \delta_{11}(E_{i,j}), \quad h_{i1} =
 \operatorname{expit}(\alpha_0 + \alpha_1X_{i,j}),\\[1mm]
@@ -1638,6 +1640,9 @@ of <span class="math inline">\(\rho\)</span> and thus DE and ME. This
 rigorous framework not only accounts for the complex structure of
 high-dimensional microbiome data but also ensures that the resulting
 inference is both consistent and reproducible.</p>
+</div>
+<div id="estimation-of-xiee" class="section level4">
+<h4>Estimation of <span class="math inline">\(\xi^{ee}\)</span></h4>
 <p><span class="math inline">\(\xi^{11}\)</span> and <span class="math inline">\(\xi^{00}\)</span> can be further estimated using
 the robust joint estimation defined below.</p>
 <p><span class="math display">\[
@@ -1669,6 +1674,7 @@ used to calculate P-Values for clinical decision making.</p>
 \sqrt{SE(\xi^{00})^2 + SE(\rho)^2 + \frac{8}{n}E[(f_{i4} -
 \rho)(f_{i7}^{00} - \xi^{00})]}\)</span></li>
 </ul>
+</div>
 </div>
 </div>
 <div id="results" class="section level2">
@@ -1962,6 +1968,12 @@ Humans.”</span> <em>Cell</em> 164: 337–40. <a href="https://doi.org/10.1016/
 Sohn, B. M., and H Li. 2019. <span>“COMPOSITIONAL MEDIATION ANALYSIS FOR
 MICROBIOME STUDIES.”</span> <em>The Annals of Applied Statistics</em> 13
 (1): 661–81.
+</div>
+<div id="ref-Tchetgen2012" class="csl-entry">
+Tchetgen, E, and I Shpitser. 2012. <span>“Semiparametric Theory for
+Causal Mediation Analysis: Efficiency Bounds, Multiple Robustness and
+Sensitivity Analysis.”</span> <em>The Annals of Statistics</em> 40 (3):
+1816–45. <a href="https://doi.org/10.1214/12-AOS990">https://doi.org/10.1214/12-AOS990</a>.
 </div>
 <div id="ref-Tsillimigras2016" class="csl-entry">
 Tsilimigras, M, and A Fodor. 2016. <span>“Compositional Data Analysis of
